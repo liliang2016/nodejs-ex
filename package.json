@@ -1,34 +1,25 @@
 {
-  "name": "nodejs-ex",
-  "version": "0.0.1",
-  "description": "Node.js sample app for OpenShift 3",
-  "main": "server.js",
-  "dependencies": {
-    "chai": "^3.5.0",
-    "chai-http": "^2.0.1",
-    "ejs": "^2.4.1",
-    "express": "^4.13.4",
-    "mocha": "^2.4.5",
-    "mongodb": "^2.1.16",
-    "morgan": "^1.7.0",
-    "object-assign":"4.1.0"
-  },
-  "engine": {
-    "node": "*",
-    "npm": "*"
-  },
+  "name": "nust-soc",
+  "version": "1.0.0",
+  "description": "My shining Nuxt.js project",
+  "author": "jser.li",
+  "private": true,
   "scripts": {
-    "start": "node server.js",
-    "test": "IP=0.0.0.0 PORT=3030 mocha --timeout 5000 tests/*_test.js"
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
   },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/openshift/nodejs-ex.git"
+  "dependencies": {
+    "nuxt": "^1.0.0",
+    "express": "^4.15.3",
+    "@nuxtjs/axios": "^5.0.0"
   },
-  "author": "Steve Speicher <sspeiche@gmail.com>",
-  "license": "CC-BY-1.0",
-  "bugs": {
-    "url": "http://github.com/openshift/nodejs-ex/issues"
-  },
-  "homepage": "http://github.com/openshift/nodejs-ex"
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "node-sass": "^4.9.2",
+    "nodemon": "^1.11.0",
+    "sass-loader": "^7.0.3",
+    "style-resources-loader": "^1.1.0"
+  }
 }
