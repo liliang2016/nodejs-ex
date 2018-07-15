@@ -13,10 +13,10 @@
   "dependencies": {
     "nuxt": "^1.0.0",
     "express": "^4.15.3",
+    "cross-env": "^5.0.1",
     "@nuxtjs/axios": "^5.0.0"
   },
   "devDependencies": {
-    "cross-env": "^5.0.1",
     "node-sass": "^4.9.2",
     "nodemon": "^1.11.0",
     "sass-loader": "^7.0.3",
