@@ -1,67 +1,37 @@
-const pkg = require('./package')
-
 module.exports = {
-  mode: 'universal',
-
   /*
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: '社交网站',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#FFFFFF' },
-
   /*
   ** Global CSS
   */
   css: [
-    { src: '~assets/scss/base.scss', type: 'scss' }
-  ],
-
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
-
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    { type: 'scss', src: '~/assets/scss/base.scss' }
   ],
   /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
-
-  /*
-  ** Build configuration
+  ** Add axios globally
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-      
-    },
+    vendor: ['axios'],
     styleResources: {
       scss: './assets/scss/vars.scss'
     }
-  }
+  },
+  serverMiddleware: [
+    // API middleware
+  ],
+  plugins: [
+    
+  ]
 }
