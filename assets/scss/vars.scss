@@ -9,8 +9,10 @@ $dangerColor: #FF5722;
 // 信息颜色
 $infoColor: #9E9E9E;
 
+$white: #fff;
+
 // 主要高亮色
-$primaryColor--light-1: #5C6BC0;
+$primaryColor--light-1: mix($white, $primaryColor, 50%);
 $primaryColor--light-2: #7986CB;
 // 成功高亮色
 $successColor--light-1: #9CCC65;

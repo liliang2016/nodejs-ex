@@ -133,20 +133,26 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [{ type: 'scss', src: '~/assets/scss/base.scss' }],
+  css: ['element-ui/lib/theme-chalk/index.css'],
   /*
   ** Add axios globally
   */
   build: {
-    vendor: ['axios'],
-    styleResources: {
-      scss: './assets/scss/vars.scss'
+    vendor: ['axios', 'element-ui'],
+    // styleResources: {
+    //   scss: './assets/scss/vars.scss'
+    // },
+    babel: {
+      plugins: [['component', [{
+        'libraryName': 'element-ui',
+        'styleLibraryName': 'theme-chalk'
+      }]]]
     }
   },
   serverMiddleware: [
     // API middleware
   ],
-  plugins: []
+  plugins: ['@/plugins/element-ui']
 };
 
 /***/ })

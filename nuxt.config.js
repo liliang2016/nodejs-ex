@@ -17,21 +17,34 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { type: 'scss', src: '~/assets/scss/base.scss' }
+    'element-ui/lib/theme-chalk/index.css',
+    // { type: 'scss', src: '~/assets/scss/base.scss' }
   ],
   /*
   ** Add axios globally
   */
   build: {
-    vendor: ['axios'],
-    styleResources: {
-      scss: './assets/scss/vars.scss'
+    vendor: ['axios', 'element-ui'],
+    // styleResources: {
+    //   scss: './assets/scss/vars.scss'
+    // },
+    babel: {
+      plugins: [
+        [
+          'component', [
+            {
+              'libraryName': 'element-ui',
+              'styleLibraryName': 'theme-chalk'
+            }
+          ]
+        ]
+      ]
     }
   },
   serverMiddleware: [
     // API middleware
   ],
   plugins: [
-    
+    '@/plugins/element-ui'
   ]
 }
